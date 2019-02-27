@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidApplication1</string>
+    <string name="welcome_to_android_world">Welcome To Android World!</string>
+    <string name="dialNumber">Dial Number</string>
+    <string name="toast">toast</string>
+    <string name="showLocation">Show Location</string>
+    <string name="openWebPage">Open Web Page</string>
+    <string name="viewIntent">View Intent</string>
+    <string name="letsGetPro">Lets Get Prof ..</string>
+    <string name="hi_from_other_activity">Hi from Other activity</string>
+</resources>
