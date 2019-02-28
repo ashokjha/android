@@ -13,7 +13,6 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(this);
         ccyButton=(Button) findViewById(R.id.btnCcyCnv);

@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private JSONParser jParser = new JSONParser();
 
     private JSONObject json;
-    private static String url_login = "http://192.168.1.114:8080/loginservlet/login";
 
     //JSONArray incoming_msg = null;
     @Override
@@ -40,17 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-                // execute method invokes doInBackground() where we open a Http URL connection using the given Servlet URL
-                //and get output response from InputStream and return it.
                 new Login().execute();
-                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-
+                System.out.println("post login");
             }
         });
     }
 
     private void initializeViewsById() {
-
         uname = (EditText) findViewById(R.id.txtUser);
         password = (EditText) findViewById(R.id.txtPass);
         submit = (Button) findViewById(R.id.button1);
@@ -67,11 +62,8 @@ public class MainActivity extends AppCompatActivity {
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("u", username));
             params.add(new BasicNameValuePair("p", pass));
-            json = jParser.makeHttpRequest(url_login, "GET", params);
-            String s = null;
-
+            json = jParser.makeHttpRequest(getResources().getString(R.string.lgnurl), "GET", params);
             try {
-                //  s= json.getString("info");
                 Log.d("Msg", json.getString("info"));
                 if (json.getString("info").equals("success")) {
                     Intent login = new Intent(getApplicationContext(), Welcome.class);
@@ -79,29 +71,23 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(login);
                     finish();
                 } else {
-                    ((EditText)findViewById(R.id.infoid)).setText("Either User Id or Pzasswordf required change");
+                    ((EditText)findViewById(R.id.infoid)).setText("Either User Id or Password is wrong.");
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;

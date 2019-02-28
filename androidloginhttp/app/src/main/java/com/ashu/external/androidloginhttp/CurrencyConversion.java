@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.ashu.external.androidloginhttp.helper.JSONParser;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
 import org.apache.http.NameValuePair;
@@ -21,17 +22,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrencyConversion extends AppCompatActivity {
-    private EditText fromCCY, toCCY;
-    private Button convert;
 
+    private Button convert;
     private JSONObject json;
-    private static String ccyCnvUrl = "https://free.currencyconverterapi.com/api/v6/convert?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency_conversion);
-        new CcyConvert().execute();
+        System.out.println(new CcyConvert().execute());
+
     }
 
 
@@ -39,20 +39,15 @@ public class CurrencyConversion extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... args) {
-
-            String fromCCY = "USD";// fromCCy.getText().toString();
-            String toCCY = "INR";// toCCy.getText().toString();-
             JSONParser jsonParser = new JSONParser();
-            String url = ccyCnvUrl + "q=" + fromCCY + "_" + toCCY + "&compact=ultra&apiKey=6a65bb2786ed73e05520";
-            JSONArray jarray = jsonParser.getJSONFromUrl(url);
-            System.out.println(jarray);
+            JSONArray jarray = jsonParser.getJSONFromUrl(getResources().getString(R.string.wburl));
+            ((EditText) findViewById(R.id.jid)).setText(jarray.toString());
             try {
-                Log.d("CNV", jarray.join(":"));
+                Log.d("WSREST", jarray.join(":"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-            return null;
+            return jarray.toString();
         }
 
     }
