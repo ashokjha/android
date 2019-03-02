@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AndroidNaviAndFrag</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="imgdesc">imgdesc</string>
+
+    <string-array name="titles">
+        <item>Message</item>
+        <item>SMS</item>
+        <item>E-Mail</item>
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/message</item>
+        <item>@drawable/sms</item>
+        <item>@drawable/email</item>
+    </array>
+
+</resources>

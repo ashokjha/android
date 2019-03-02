@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android MAP poc</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

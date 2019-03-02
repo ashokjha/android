@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="helloWorld">  Hello World!\n
+        Name :- Ashok Kumar Jha\n
+        e-mail :- ashu.kr.jha@gmail.com
+        Phone :- +91-9831587781
+    </string>
+</resources>

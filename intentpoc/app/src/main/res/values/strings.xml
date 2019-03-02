@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">intentpoc</string>
+    <string name="callOtherActivityButton">Call Other Activity</string>
+    <string name="callFromMain">Called from Main Activity \n Devbrata</string>
+    <string name="MainDiffTitle">Main Activity</string>
+    <string name="callFromOther">Called from other Activity \n Aayush</string>
+    <string name="CalleeDiffTitle">Callee Activity</string>
+    <string name="hello_intent">Hello Intent M!\n Ashok Kumar Jha</string>
+    <string name="hello_intent_target">Hello Intent Callee \n ashu.kr.jha</string>
+    <string name="backButton">Back</string>
+    <string name="intent_poc">Intent POC</string>
+    <string name="headerfont">sans-serif-condensed-medium</string>
+</resources>

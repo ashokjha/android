@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TargetContentActivity">
+
+    <TextView
+        android:id="@+id/calleettl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@string/headerfont"
+        android:text="@string/hello_intent_target"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/calleeInfoId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/backButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.v7.widget.LinearLayoutCompat>
